@@ -1,0 +1,13 @@
+<head></head>
+<body ng-app="karma" ng-controller="mainController">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.2/lodash.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="app.js"></script>
+    <button ng-if="!adding && !see" ng-click="addNew()">Напиши история</button>
+    <button ng-if="!adding && !see" ng-click="browse()">Оцени история</button>
+    <textarea rows="4" cols="50" ng-show="adding" ng-model="text"></textarea>
+    <button ng-if="adding" ng-click="confirmAdd()">Добави</button>
+    <button ng-if="adding" ng-click="rejectAdd()">Отказ</button>
+    <div ng-if="see">{{story.story}}</div>
+    <button ng-if="see" ng-repeat="i in [1,2,3,4,5]" ng-click="rate(i)">{{i}}</button>
+</body>
